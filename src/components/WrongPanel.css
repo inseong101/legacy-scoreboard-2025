@@ -1,10 +1,83 @@
-/* ==== WrongAnswerPanel (collapsible by session) ==== */
-.accordion{display:flex;flex-direction:column;gap:10px}
-.session{border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}
-.session-head{width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:linear-gradient(90deg,var(--primary),#4cc9ff);color:#fff;border:none;border-radius:12px 12px 0 0;cursor:pointer;font-weight:800;letter-spacing:.2px}
-.session-head .arrow{transition:transform .25s ease}
-.session-head.open .arrow{transform:rotate(90deg)}
-.panel{border-top:1px solid var(--line)}
-.panel .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;padding:8px 10px 12px}
-.qbtn{appearance:none;border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--ink);border-radius:8px;padding:8px 0;font-weight:800;font-size:13px;cursor:default}
-.qbtn.red{background:rgba(239,68,68,.16);border-color:rgba(239,68,68,.45);color:#ffd8d8}
+/* Current map/main monochrome wrong-answer panel styling, adapted to legacy accordion structure. */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.session {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.session-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 1px solid #d7d8dc;
+  border-radius: 0;
+  background: #171719;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.session-head:hover { background: #000000; }
+.session-head .arrow { transition: transform .25s ease; }
+.session-head.open .arrow { transform: rotate(90deg); }
+
+.panel { border-top: 0; background: #ffffff; }
+.panel .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 6px;
+  padding: 10px 12px 14px;
+}
+
+.qbtn {
+  appearance: none;
+  border: 1px solid #dedfe3;
+  background: #f7f7f8;
+  color: #171719;
+  border-radius: 8px;
+  padding: 8px 0;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: default;
+}
+
+.qbtn.red {
+  border-color: #efcaca;
+  background: #fff4f4;
+  color: #b42318;
+}
+
+:root[data-theme='dark'] .session {
+  border-color: #3a3a3f;
+  background: #222225;
+}
+
+:root[data-theme='dark'] .session-head {
+  border-bottom-color: #45454b;
+  background: #f5f5f6;
+  color: #171719;
+}
+
+:root[data-theme='dark'] .session-head:hover { background: #d7d7da; }
+:root[data-theme='dark'] .panel { background: #171719; }
+:root[data-theme='dark'] .qbtn {
+  border-color: #3a3a3f;
+  background: #222225;
+  color: #f5f5f6;
+}
+:root[data-theme='dark'] .qbtn.red {
+  border-color: #7f3434;
+  background: #321c1d;
+  color: #ffcece;
+}
