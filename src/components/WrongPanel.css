@@ -1,0 +1,10 @@
+/* ==== WrongAnswerPanel (collapsible by session) ==== */
+.accordion{display:flex;flex-direction:column;gap:10px}
+.session{border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}
+.session-head{width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:linear-gradient(90deg,var(--primary),#4cc9ff);color:#fff;border:none;border-radius:12px 12px 0 0;cursor:pointer;font-weight:800;letter-spacing:.2px}
+.session-head .arrow{transition:transform .25s ease}
+.session-head.open .arrow{transform:rotate(90deg)}
+.panel{border-top:1px solid var(--line)}
+.panel .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;padding:8px 10px 12px}
+.qbtn{appearance:none;border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--ink);border-radius:8px;padding:8px 0;font-weight:800;font-size:13px;cursor:default}
+.qbtn.red{background:rgba(239,68,68,.16);border-color:rgba(239,68,68,.45);color:#ffd8d8}
